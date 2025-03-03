@@ -1,3 +1,5 @@
+***BRUTE FORCE CODE***
+
 #include<iostream>
 using namespace std;
 
@@ -31,4 +33,41 @@ int main(){
     return 0;
 
 }
+
+***OPTIMIZED APPROACH***
+char FirstRepeatingChar(string s){
+    int freq[26]={0};
+
+    for(int i=0; i<s.length(); i++){
+        char c=s[i];
+        int index= c-'a';
+
+        if(freq[index]>0){
+            return c;
+        }
+        freq[index]++;
+    }
+    return 0;
+}
+int main(){
+    string str;
+    cout<<"Enter a string: ";
+    cin>>str;
+
+    char result=FirstRepeatingChar(str);
+    if (result != '\0')
+        cout << "First repeating character: " << result << endl;
+    else
+        cout << "No repeating characters found." << endl;
+
+    return 0;
+
+}
+
+
+
+
+
+
+
 
